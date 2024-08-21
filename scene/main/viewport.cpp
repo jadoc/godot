@@ -2254,7 +2254,7 @@ void Viewport::_gui_input_event(Ref<InputEvent> p_event) {
 				}
 			}
 
-			if (can_tooltip && !is_tooltip_shown && over->can_process()) {
+			if (can_tooltip && !is_tooltip_shown && over->can_process() && !mm->get_relative().is_zero_approx()) {
 				if (gui.tooltip_timer.is_valid()) {
 					gui.tooltip_timer->release_connections();
 					gui.tooltip_timer = Ref<SceneTreeTimer>();
