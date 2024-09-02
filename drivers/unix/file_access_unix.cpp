@@ -137,7 +137,7 @@ Error FileAccessUnix::open_internal(const String &p_path, int p_mode_flags) {
 	return OK;
 }
 
-void FileAccessWindows::_sync() {
+void FileAccessUnix::_sync() {
 	ERR_FAIL_NULL(f);
 
 	fflush(f);
